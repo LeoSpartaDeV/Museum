@@ -6,33 +6,27 @@ import 'swiper/swiper-bundle.css';
 
 let swiperInstance = null;
 
-const menu = document.querySelector('.menu');
-const menuLink = document.querySelector('.header__menu');
-const closeBtn = document.querySelector('.menu__close');
-const backdrop = document.querySelector('.menu__bg');
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.menu');
+  const openBtn = document.querySelector('.header__menu');
+  const closeBtn = document.querySelector('.menu__close');
+  const links = document.querySelectorAll('.menu__link');
 
-// Відкриття меню
-menuLink.addEventListener('click', (e) => {
-  e.preventDefault(); // Запобігаємо переходу за посиланням, якщо <a>
-  menu.classList.add('menu--open');
-  document.body.classList.add('no-scroll');
-});
-
-// Закриття меню по кнопці
-closeBtn.addEventListener('click', () => {
-  menu.classList.remove('menu--open');
-  document.body.classList.remove('no-scroll');
-});
-
-// Закриття меню при кліку на затемнення
-if (backdrop) {
-  backdrop.addEventListener('click', () => {
+  const closeMenu = () => {
     menu.classList.remove('menu--open');
-    document.body.classList.remove('no-scroll');
-  });
-}
+    document.body.style.overflow = '';
+  };
 
-// Обробка форми (залишив як було)
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    menu.classList.add('menu--open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+  links.forEach((link) => link.addEventListener('click', closeMenu));
+});
+
 document
   .querySelector('.contact__form')
   .addEventListener('submit', function(e) {
@@ -41,7 +35,6 @@ document
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-// Ініціалізація слайдера
 function initSwiper() {
   const screenWidth = window.innerWidth;
 
@@ -72,7 +65,6 @@ function initSwiper() {
   }
 }
 
-// Функція throttle для оптимізації resize
 function throttle(func, delay) {
   let lastCall = 0;
 
