@@ -77,6 +77,14 @@
   &__info {
     display: block;
     line-height: 21px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+
+    @include media(tabl) {
+      &:hover {
+        color: #04bb93;
+      }
+    }
   }
 
   &__line {
