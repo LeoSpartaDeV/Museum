@@ -4,12 +4,21 @@
   z-index: 999;
   padding-block: 25px;
   top: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-100%);
-  transition: all 0.3s;
+  left: 0;
   width: 100%;
   background-color: #1a5a4c;
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+
+  &--open {
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: all;
+  }
 
   @include media(tabl) {
     height: 220px;
@@ -18,12 +27,6 @@
 
   @include media(desc) {
     height: 225px;
-  }
-
-  &:target {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(0);
   }
 
   &__content {
@@ -48,6 +51,7 @@
     align-self: flex-start;
     height: 24px;
     width: 24px;
+    cursor: pointer;
   }
 
   &__link {

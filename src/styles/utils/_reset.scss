@@ -64,3 +64,9 @@ textarea {
   border: none;
   background: none;
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #1a5a4c;
+}

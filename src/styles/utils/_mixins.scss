@@ -1,5 +1,6 @@
 .no-scroll {
   overflow: hidden;
+  padding-right: 15px;
 }
 
 @mixin media($breakpoint) {
