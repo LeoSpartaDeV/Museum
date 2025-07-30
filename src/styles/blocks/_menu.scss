@@ -45,12 +45,9 @@
   }
 
   &__close {
-    height: fit-content;
     align-self: flex-start;
-
-    & img {
-      scale: 1.7;
-    }
+    height: 24px;
+    width: 24px;
   }
 
   &__link {

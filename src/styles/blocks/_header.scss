@@ -8,6 +8,11 @@
     top: 27px;
     height: 24px;
     width: 24px;
+    transition: background-image 0.3s ease;
+
+    &:hover {
+       background-image: url(../images/menu-icon/menu-icon-hover.svg);
+    }
 
     @include media(tabl) {
       left: 34px;
@@ -79,10 +84,16 @@
     margin: 0 auto;
     border: 1px solid #1a5a4c;
     max-width: 280px;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 2px #1a5a4c40;
+    }
 
     @include media(tabl) {
       max-width: 270px;
       margin: 0;
+      cursor: pointer;
     }
 
     @include media(desc) {
@@ -111,6 +122,11 @@
       background-repeat: no-repeat;
       background-position: center;
       flex-shrink: 0;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f14a27;
+      }
 
       @include media(tabl) {
         width: 70px;
@@ -141,7 +157,12 @@
         width: 1px;
         height: 70px;
         background-color: #16524d;
+        transition: background-color 0.3s ease;
       }
+    }
+
+    &:hover::before {
+      background-color: #c14b2e;
     }
   }
 

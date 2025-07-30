@@ -32,9 +32,19 @@
   &__image {
     margin-bottom: 20px;
     width: 100%;
+    transition:
+      border-top-left-radius 0.3s ease-in-out,
+      border-bottom-right-radius 0.3s ease-in-out,
+      scale 0.3s ease-in-out;
 
     @include media(tabl) {
       margin-bottom: 40px;
+
+      &:hover {
+        scale: 1.05;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
     }
 
     @include media(desc) {

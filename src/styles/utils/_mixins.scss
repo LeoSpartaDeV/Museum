@@ -25,6 +25,10 @@
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .container {
   margin-inline: auto;
   padding-inline: 20px;
@@ -37,6 +41,10 @@
   @include media(desc) {
     max-width: 1280px;
     padding-inline: 55px;
+  }
+
+  &--fluid {
+    max-width: 100%;
   }
 }
 

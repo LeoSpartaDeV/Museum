@@ -5,6 +5,16 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 let swiperInstance = null;
+const menuLink = document.querySelector('.header__menu');
+const closeBtn = document.querySelector('.menu__close');
+
+menuLink.addEventListener('click', () => {
+  document.body.classList.add('no-scroll');
+});
+
+closeBtn.addEventListener('click', () => {
+  document.body.classList.remove('no-scroll');
+});
 
 function initSwiper() {
   const screenWidth = window.innerWidth;

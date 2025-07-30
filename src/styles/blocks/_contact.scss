@@ -3,6 +3,7 @@
   height: 380px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,10 +57,12 @@
   &__input {
     padding: 13px 24px;
     background: #fff;
+    transition: color 0.3s ease;
 
     @include media(tabl) {
       padding: 23px 24px;
       min-width: 375px;
+      cursor: pointer;
     }
 
     @include media(desc) {
@@ -72,6 +75,12 @@
       font-weight: 400;
       font-size: 14px;
       color: #687480;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: #1a5a4c;
+      }
     }
   }
 
@@ -93,9 +102,10 @@
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: center;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #9d1d03;
+      background-color: #1a5a4c;
     }
 
     @include media(tabl) {
